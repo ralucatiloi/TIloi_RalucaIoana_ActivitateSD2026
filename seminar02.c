@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
-//#include <string.h>
 
-// operatorul index = deplasare si dereferentiere
+
+// operatorul index face deplasare si dereferentiere
 
 struct Telefon {
 	int id;
