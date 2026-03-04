@@ -43,34 +43,31 @@ void adaugaMasinaInVector(Masina** masini, int * nrMasini, Masina masinaNoua) {
 
 Masina citireMasinaFisier(FILE* file) {
 	
+	
 	char linie[256];
-	if(!fgets(linie,255,file)){
-		Masina m;
-		m.id=-1;
-		return m;
-	}
-	char delimitator[3]=",\n";
+	fgets(linie, 255, file);
+	char delimitator[3] = ",\n";
 	Masina masina;
-	masina.id= atoi(strtok(linie, delimitator)); //atoi in int
-	masina.nrUsi=atoi(strtok(NULL,delimitator));
-	masina.pret=atof(strtok(NULL, delimitator)); //atof in float
+	masina.id = atoi(strtok(linie, delimitator)); //atoi in int
+	masina.nrUsi = atoi(strtok(NULL, delimitator));
+	masina.pret = atof(strtok(NULL, delimitator)); //atof in float
 	char* aux = strtok(NULL, delimitator);
-	masina.model=(char*)malloc((strlen(aux)+1)*sizeof(char));
+	masina.model = (char*)malloc((strlen(aux) + 1) * sizeof(char));
 	strcpy(masina.model, aux);
 	aux = strtok(NULL, delimitator);
-	masina.numeSofer=(char*)malloc((strlen(aux)+1)*sizeof(char));
-	strcpy(masina.numeSofer,aux);
-	masina.serie=strtok(NULL, delimitator)[0];
+	masina.numeSofer = (char*)malloc((strlen(aux) + 1) * sizeof(char));
+	strcpy(masina.numeSofer, aux);
+	masina.serie = strtok(NULL, delimitator)[0];
 	return masina;
-	
-
 }
+
+	
 
 Masina* citireVectorMasiniFisier(const char* numeFisier, int* nrMasiniCitite) {
 	FILE* file = fopen(numeFisier, "r");
 	if (!file) {
 		printf("eroare la deschidere\n");
-		return ;
+		return NULL;
 	}
 	else {
 		Masina* vectorMasini = NULL;
