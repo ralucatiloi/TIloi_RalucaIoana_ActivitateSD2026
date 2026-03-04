@@ -67,7 +67,9 @@ Masina* citireVectorMasiniFisier(const char* numeFisier, int* nrMasiniCitite) {
 	FILE* file = fopen(numeFisier, "r");
 	if (!file) {
 		printf("eroare la deschidere\n");
-		return NULL;
+		return;
+		
+
 	}
 	else {
 		Masina* vectorMasini = NULL;
