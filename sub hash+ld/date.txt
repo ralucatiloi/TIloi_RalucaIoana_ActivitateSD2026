@@ -1,0 +1,6 @@
+101,Mara,Ioan Slavici,1894,1
+102,Ion,Liviu Rebreanu,1920,0
+103,Enigma Otiliei,George Calinescu,1938,1
+104,Baltagul,Mihail Sadoveanu,1930,1
+105,Moara cu Noroc,Ioan Slavici,1881,0
+106,Patul lui Procust,Camil Petrescu,1933,1
